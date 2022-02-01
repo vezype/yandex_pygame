@@ -841,10 +841,9 @@ class App:
         except pygame.error or KeyboardInterrupt or InterruptedError:
             if self.timer is not None:
                 self.timer.cancel()
-            pygame.quit()
             with open('records_from_pacman.txt', 'w', encoding='UTF-8') as file:
                 file.write(f'Осталось жизней: {self.lifes}\nМаксимальный счет: {max(self.board.s)}')
-            #sys.exit()
+            pygame.quit()
 
     def check_situation(self):
         if any([True for i in self.enemies if i.end]):
@@ -931,10 +930,9 @@ class App:
                                                 (WIDTH, HEIGHT)), (0, 0))
         pygame.display.flip()
         pygame.time.delay(1000)
-        pygame.quit()
         with open('records_from_pacman.txt', 'w', 'UTF-8') as file:
             file.write(f'Осталось жизней: {self.lifes}\nМаксимальный счет: {max(self.board.s)}')
-        #sys.exit()
+        pygame.quit()
 
 
 if __name__ != '__main__':
