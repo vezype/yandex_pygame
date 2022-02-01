@@ -13,7 +13,17 @@
   <property name="windowTitle">
    <string>Меню</string>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../images/logo_menu.png</normaloff>../images/logo_menu.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(0, 0, 0);</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
    <widget class="QLabel" name="lb_pacman">
     <property name="geometry">
      <rect>
@@ -26,11 +36,14 @@
     <property name="text">
      <string/>
     </property>
+    <property name="pixmap">
+     <pixmap>../images/pacman_menu.png</pixmap>
+    </property>
    </widget>
    <widget class="QLabel" name="lb_arkanoid">
     <property name="geometry">
      <rect>
-      <x>690</x>
+      <x>700</x>
       <y>0</y>
       <width>331</width>
       <height>601</height>
@@ -39,54 +52,41 @@
     <property name="text">
      <string/>
     </property>
+    <property name="pixmap">
+     <pixmap>../images/arkanoid_menu.png</pixmap>
+    </property>
    </widget>
-   <widget class="QWidget" name="verticalLayoutWidget">
+   <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>430</x>
-      <y>140</y>
-      <width>160</width>
-      <height>271</height>
+      <x>350</x>
+      <y>80</y>
+      <width>331</width>
+      <height>101</height>
      </rect>
     </property>
-    <layout class="QVBoxLayout" name="verticalLayout">
-     <item>
-      <widget class="QPushButton" name="btn_pacman">
-       <property name="font">
-        <font>
-         <pointsize>10</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Pac-Man</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="btn_arkanoid">
-       <property name="font">
-        <font>
-         <pointsize>10</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Arkanoid</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="btn_exit">
-       <property name="font">
-        <font>
-         <pointsize>11</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Выйти</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../images/pacman_logo.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>200</y>
+      <width>331</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../images/arkanoid_logo.png</pixmap>
+    </property>
    </widget>
   </widget>
  </widget>
