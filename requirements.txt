@@ -1,0 +1,7 @@
+pygame
+os
+sys
+Pillow
+threading
+random
+math
