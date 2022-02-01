@@ -844,7 +844,7 @@ class App:
             pygame.quit()
             with open('records_from_pacman.txt', 'w', encoding='UTF-8') as file:
                 file.write(f'Осталось жизней: {self.lifes}\nМаксимальный счет: {max(self.board.s)}')
-            sys.exit()
+            #sys.exit()
 
     def check_situation(self):
         if any([True for i in self.enemies if i.end]):
@@ -934,7 +934,7 @@ class App:
         pygame.quit()
         with open('records_from_pacman.txt', 'w', 'UTF-8') as file:
             file.write(f'Осталось жизней: {self.lifes}\nМаксимальный счет: {max(self.board.s)}')
-        sys.exit()
+        #sys.exit()
 
 
 if __name__ != '__main__':
