@@ -5,3 +5,6 @@ Pillow
 threading
 random
 math
+PyQt5
+enum
+time

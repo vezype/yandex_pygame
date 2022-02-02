@@ -56,7 +56,7 @@
      <pixmap>../images/arkanoid_menu.png</pixmap>
     </property>
    </widget>
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="lb_pacman_2">
     <property name="geometry">
      <rect>
       <x>350</x>
@@ -72,7 +72,7 @@
      <pixmap>../images/pacman_logo.png</pixmap>
     </property>
    </widget>
-   <widget class="QLabel" name="label_2">
+   <widget class="QLabel" name="lb_arkanoid_2">
     <property name="geometry">
      <rect>
       <x>350</x>
@@ -86,6 +86,52 @@
     </property>
     <property name="pixmap">
      <pixmap>../images/arkanoid_logo.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lb_dino">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>320</y>
+      <width>331</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../images/dino_logo.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lb_authors">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>480</y>
+      <width>351</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Bahnschrift</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>Авторы проекта: 
+Дмитрий Гиль (vezype)
+Ульяна Клеева
+Михаил Шершнев
+
+© Лицей Академии Яндекса</string>
     </property>
    </widget>
   </widget>

@@ -10,13 +10,16 @@ class Menu(QMainWindow):
         uic.loadUi('data_menu/ui/menu.ui', self)
 
     def open_arkanoid(self):
-        self.hide()
-        import arkanoid
-        sys.exit()
+        pass
 
     def open_pacman(self):
         self.hide()
         import pacman
+        sys.exit()
+
+    def open_dino(self):
+        self.hide()
+        import dino
         sys.exit()
 
     def mousePressEvent(self, event) -> None:
@@ -26,6 +29,8 @@ class Menu(QMainWindow):
             self.open_pacman()
         elif 350 < x < 680 and 208 < y < 300:
             self.open_arkanoid()
+        elif 350 < x < 680 and 319 < y < 423:
+            self.open_dino()
 
 
 if __name__ == '__main__':
