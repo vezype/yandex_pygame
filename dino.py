@@ -130,6 +130,8 @@ def start_game():
     road = pygame.image.load(load_file('road.png'))
     font = pygame.font.SysFont('Roboto Condensed', 30)
     bg = (255, 255, 255)
+    sound_jump = pygame.mixer.Sound(load_file('jump.wav'))
+    sound_jump.set_volume(100)
 
     score = 0
     score_speedup = 100
@@ -199,6 +201,7 @@ def start_game():
         user_input = pygame.key.get_pressed()
         if user_input[pygame.K_SPACE]:
             if not dinosaur.state == DinoState.JUMP:
+                sound_jump.play()
                 dinosaur.jump()
 
         score_label = score_font.render("Очки: " + str(math.floor(score)), True, (50, 50, 50))
