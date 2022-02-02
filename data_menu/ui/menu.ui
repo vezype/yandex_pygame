@@ -56,11 +56,11 @@
      <pixmap>../images/arkanoid_menu.png</pixmap>
     </property>
    </widget>
-   <widget class="QLabel" name="lb_pacman_2">
+   <widget class="QLabel" name="btn_pacman">
     <property name="geometry">
      <rect>
       <x>350</x>
-      <y>80</y>
+      <y>10</y>
       <width>331</width>
       <height>101</height>
      </rect>
@@ -72,11 +72,11 @@
      <pixmap>../images/pacman_logo.png</pixmap>
     </property>
    </widget>
-   <widget class="QLabel" name="lb_arkanoid_2">
+   <widget class="QLabel" name="btn_arkanoid">
     <property name="geometry">
      <rect>
       <x>350</x>
-      <y>200</y>
+      <y>130</y>
       <width>331</width>
       <height>101</height>
      </rect>
@@ -88,11 +88,11 @@
      <pixmap>../images/arkanoid_logo.png</pixmap>
     </property>
    </widget>
-   <widget class="QLabel" name="lb_dino">
+   <widget class="QLabel" name="btn_dino">
     <property name="geometry">
      <rect>
       <x>350</x>
-      <y>320</y>
+      <y>250</y>
       <width>331</width>
       <height>101</height>
      </rect>
@@ -132,6 +132,22 @@
 Михаил Шершнев
 
 © Лицей Академии Яндекса</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="btn_car">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>370</y>
+      <width>331</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../images/car_logo.png</pixmap>
     </property>
    </widget>
   </widget>
