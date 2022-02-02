@@ -5,3 +5,4 @@ Pillow
 threading
 random
 math
+PyQt5
