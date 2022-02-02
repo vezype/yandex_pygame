@@ -1,7 +1,22 @@
 import pygame
 import random
 import math
+import sys
 from enum import Enum
+import os
+
+game_speed = 8.0
+size = width, height = 1280, 720
+
+
+def load_file(name):
+    base_path = getattr(sys, '_MEIPASS', os.path.dirname(os.path.abspath(__file__)))
+    fullname = os.path.join(base_path + '/data_dino/', name)
+    if not os.path.isfile(fullname):
+        print(f"Файл '{fullname}' не найден")
+        sys.exit()
+    else:
+        return fullname
 
 
 class DinoState(Enum):
@@ -27,9 +42,9 @@ class Dino:
         self.image = self.sprites["run"][0]
 
     def load_sprites(self):
-        self.sprites["jump"].append(pygame.image.load(f"data_dino/dino/jump.png"))
-        self.sprites["run"].append(pygame.image.load(f"data_dino/dino/run1.png"))
-        self.sprites["run"].append(pygame.image.load(f"data_dino/dino/run2.png"))
+        self.sprites["jump"].append(pygame.image.load(load_file(f"dino/jump.png")))
+        self.sprites["run"].append(pygame.image.load(load_file(f"dino/run1.png")))
+        self.sprites["run"].append(pygame.image.load(load_file(f"dino/run2.png")))
 
     def update(self):
         if self.state == DinoState.RUN:
@@ -38,8 +53,8 @@ class Dino:
             self.jump()
 
     def run(self):
-        self.sprites["run"][0] = pygame.image.load(f"data_dino/dino/run1.png")
-        self.sprites["run"][1] = pygame.image.load(f"data_dino/dino/run2.png")
+        self.sprites["run"][0] = pygame.image.load(load_file("dino/run1.png"))
+        self.sprites["run"][1] = pygame.image.load(load_file(f"dino/run2.png"))
 
         self.image = self.sprites["run"][self.run_animation_index[0] // self.run_animation_index[1]]
 
@@ -58,7 +73,7 @@ class Dino:
                 self.cur_jump_power = self.jump_power
         else:
             self.state = DinoState.JUMP
-            self.image = pygame.image.load(f"data_dino/dino/jump.png")
+            self.image = pygame.image.load(load_file(f"dino/jump.png"))
 
     def draw(self, screen):
         screen.blit(self.image, (self.hitbox.x, self.hitbox.y))
@@ -86,7 +101,7 @@ class Cactus:
         if self.cactus_type is None:
             self.randomize_cactus()
 
-        self.image = pygame.image.load(f"data_dino/cactus/{self.cactus_type}.png")
+        self.image = pygame.image.load(load_file(f"cactus/{self.cactus_type}.png"))
         self.hitbox = self.image.get_rect()
 
     def update(self):
@@ -105,19 +120,19 @@ def calc_dist(a, b):
     return math.sqrt(dx ** 2 + dy ** 2)
 
 
-if __name__ != '__main__':
+def start_game():
+    global game_speed
+
     pygame.init()
     pygame.display.set_caption('Динозаврик')
-    size = width, height = 1280, 720
     screen = pygame.display.set_mode(size)
 
-    road = pygame.image.load('data_dino/road.png')
+    road = pygame.image.load(load_file('road.png'))
     font = pygame.font.SysFont('Roboto Condensed', 30)
     bg = (255, 255, 255)
 
     score = 0
     score_speedup = 100
-    game_speed = 8.0
 
     enemies = [Cactus(width + 300 / random.uniform(0.8, 3), height - 85),
                Cactus(width * 2 + 200 / random.uniform(0.8, 3), height - 85),
@@ -126,8 +141,8 @@ if __name__ != '__main__':
     dinosaur = Dino(50, height - 170)
 
     road_chunks = [
-        [pygame.image.load('data_dino/road.png'), [0, height - 100]],
-        [pygame.image.load('data_dino/road.png'), [2404, height - 100]]
+        [pygame.image.load(load_file('road.png')), [0, height - 100]],
+        [pygame.image.load(load_file('road.png')), [2404, height - 100]]
     ]
 
     score_font = pygame.font.SysFont("Roboto Condensed", 40)
@@ -141,7 +156,6 @@ if __name__ != '__main__':
                 running = False
 
         screen.fill(bg)
-
         for road_chunk in road_chunks:
             if road_chunk[1][0] <= -2400:
                 road_chunk[1][0] = road_chunks[len(road_chunks) - 1][1][0] + 2400
@@ -158,6 +172,7 @@ if __name__ != '__main__':
                 strings = [f'Количество очков за последнюю игру: {score}\n',
                            f'Максимальная скорость за последнюю игру: {game_speed / 8}x']
                 file.writelines(strings)
+            game_speed = 8.0
             break
 
         if len(enemies) < 3:

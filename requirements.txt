@@ -8,3 +8,4 @@ math
 PyQt5
 enum
 time
+Box2D

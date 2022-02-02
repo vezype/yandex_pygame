@@ -935,6 +935,6 @@ class App:
         pygame.quit()
 
 
-if __name__ != '__main__':
+def start_game():
     app = App()
     app.run()
