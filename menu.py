@@ -7,9 +7,7 @@ from PyQt5.QtWidgets import QApplication, QMainWindow
 import pacman
 import arkanoid
 import dino
-
-
-# import car
+import car
 
 
 def load_file(name):
@@ -41,7 +39,9 @@ class Menu(QMainWindow):
         self.show()
 
     def open_car(self):
-        pass
+        self.hide()
+        car.start_game()
+        self.show()
 
     def mousePressEvent(self, event) -> None:
         x, y = event.x(), event.y()
