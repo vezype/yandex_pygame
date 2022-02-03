@@ -735,7 +735,8 @@ class App:
                             self.section_prev = self.section
                             self.section = 'stop'
                             if self.section_prev == 'init':
-                                self.timer.cancel()
+                                if self.timer is not None:
+                                    self.timer.cancel()
                     elif event.type == pygame.WINDOWFOCUSGAINED:
                         if self.section == 'stop' and not self.pause:
                             pygame.mixer.music.unpause()
