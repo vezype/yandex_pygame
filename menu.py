@@ -4,8 +4,8 @@ import os
 from PyQt5 import uic
 from PyQt5.QtWidgets import QApplication, QMainWindow
 
-import pacman
 import arkanoid
+import pacman
 import dino
 import car
 
@@ -26,7 +26,9 @@ class Menu(QMainWindow):
         uic.loadUi(load_file('ui/menu.ui'), self)
 
     def open_arkanoid(self):
-        pass
+        self.hide()
+        arkanoid.start_game()
+        self.show()
 
     def open_pacman(self):
         self.hide()
