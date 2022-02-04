@@ -931,7 +931,7 @@ class App:
                                                 (WIDTH, HEIGHT)), (0, 0))
         pygame.display.flip()
         pygame.time.delay(1000)
-        with open('records_from_pacman.txt', 'w', 'UTF-8') as file:
+        with open('records_from_pacman.txt', 'w', encoding='UTF-8') as file:
             file.write(f'Осталось жизней: {self.lifes}\nМаксимальный счет: {max(self.board.s)}')
         pygame.quit()
 
